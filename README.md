@@ -1,2 +1,2 @@
-# Eze_DevOps-PBL
-This is where i keep all my Darey.io Project Based Learning(PBL)
+# Eze_DevOps-Project1
+Darey.io project based learning PBL1
