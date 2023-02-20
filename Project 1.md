@@ -1,9 +1,6 @@
 # WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
 Everything you will be doing as a DevOps engineer is around software, websites, applications etc. And, there are different stack of technologies that make different solutions possible. These stack of technologies are regarded as WEB STACKS. Examples of Web Stacks include LAMP, LEMP, MEAN, and MERN stacks. As you proceed in your journey, you will be required to understand and implement all of these technology stacks.
 
-s = Character(_("Sylvie"), color="#c8ffc8")
-m = Character(_("Me"), color="#c8c8ff")
-
 ## What is a Technology stack?
 A technology stack is a set of frameworks and tools used to develop a software product. This set of frameworks and tools are very specifically chosen to work together in creating a well-functioning software. Below are the list of the Technology Stack
 
