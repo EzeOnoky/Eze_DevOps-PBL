@@ -32,23 +32,13 @@ sudo systemctl status apache2
 
 If it is green and running, then you did everything correctly – you have just launched your first Web Server in the Clouds!
 
-**Picture Confirmation that apache2 is running**
-![PBL1_1](https://user-images.githubusercontent.com/122687798/220348408-8f32d8ef-fcd1-49a0-8edc-8eb8a56dfe67.JPG)
+Before we can receive any traffic by our Web Server which is now running on apache2, we need to open TCP port 80 which is the default port that web browsers use to access web pages on the Internet. So to do this, we allow inbound traffic on port 80 on the EC2 instance Our server is running and we can access it locally and from the Internet (Source 0.0.0.0/0 means ‘from any IP address’). First, let us try to check how we can access it locally in our Ubuntu shell, run:
 
-Before we can receive any traffic by our Web Server which is now running on apache2, we need to open TCP port 80 which is the default port that web browsers use to access web pages on the Internet. So to do this, we allow inbound traffic on port 80 on the EC2 instance
-
-Our server is running and we can access it locally and from the Internet (Source 0.0.0.0/0 means ‘from any IP address’). First, let us try to check how we can access it locally in our Ubuntu shell, run:
-
- curl http://localhost:80
-or
- curl http://127.0.0.1:80
+ curl http://localhost:80   or  curl http://127.0.0.1:80
  
 These 2 commands above actually do pretty much the same – they use ‘curl’ command to request our Apache HTTP Server on port 80 (actually you can even try to not specify any port – it will work anyway). The difference is that: in the first case we try to access our server via DNS name and in the second one – by IP address (in this case IP address 127.0.0.1 corresponds to DNS name ‘localhost’ and the process of converting a DNS name to IP address is called "resolution")
 
 As an output I can see some strangely formatted test, see below, so i just made sure that our Apache web service responds to ‘curl’ command with some payload.
-
-**Picture Confirmation that CURL command was OK**
-![PBL1_2](https://user-images.githubusercontent.com/122687798/220352781-57eb8428-76e0-428c-af59-10d935d45a4e.JPG)
 
 Now it is time for us to test how our Apache HTTP server can respond to requests from the Internet. Open a web browser of your choice and try to access following url
 
@@ -120,10 +110,7 @@ sudo apt install php libapache2-mod-php php-mysql
  Once the installation is finished, you can run the following command to confirm your PHP version:
 php -v
 
-![PBL1_6](https://user-images.githubusercontent.com/122687798/220506296-e8f100fb-fb3a-4a2f-ac6b-fca6f6ad4d8d.JPG)
- 
-At this point, your LAMP stack is completely installed and fully operational.
-
+ At this point, your LAMP stack is completely installed and fully operational.
 Linux (Ubuntu)
 Apache HTTP Server
 MySQL
@@ -187,7 +174,6 @@ Finally, reload Apache so these changes take effect:
 sudo systemctl reload apache2
  
 Your new website is now active, but the web root /var/www/projectlamp is still empty. Create an index.html file in that location so that we can test that the virtual host works as expected:
- ![PBL1_7](https://user-images.githubusercontent.com/122687798/220508719-61371147-b150-4f5d-8efa-7fa461eda370.JPG)
  
 Now go to your browser and try to open your website URL using IP address:
 http://<Public-IP-Address>:80
